@@ -1,0 +1,146 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(LokaCoffeeApp());
+
+class LokaCoffeeApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.brown),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF3E2723), // Warna cokelat gelap latar belakang
+      body: Stack(
+        children: [
+          // Background Image (Gunakan gambar biji kopi dari asetmu)
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.2,
+              child: Image.network(
+                'https://your-image-url.com/coffee-background.jpg', 
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SafeArea(
+            child: Column(
+              children: [
+                _buildHeader(),
+                Expanded(child: _buildProductList()),
+              ],
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: _buildBottomNav(),
+    );
+  }
+
+  // Header dengan Logo "Loka Coffee"
+  Widget _buildHeader() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        children: [
+          Icon(Icons.coffee_rounded, size: 80, color: Color(0xFFD7CCC8)),
+          Text(
+            'LOKA COFFEE',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFD7CCC8),
+              letterSpacing: 2,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Daftar Produk sesuai gambar
+  Widget _buildProductList() {
+    final List<Map<String, String>> products = [
+      {'name': 'Espresso Roast Beans', 'price': '\$10.00', 'rating': '300'},
+      {'name': 'Signature Cold Brew', 'price': '\$12.00', 'rating': '300'},
+      {'name': 'Vanilla Latte', 'price': '\$9.50', 'rating': '200'},
+    ];
+
+    return ListView.builder(
+      padding: EdgeInsets.all(16),
+      itemCount: products.length,
+      itemBuilder: (context, index) {
+        return Container(
+          margin: EdgeInsets.only(bottom: 16),
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: Color(0xFFF5E6D3), // Warna krem kartu produk
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.network(
+                  'https://via.placeholder.com/80', // Ganti dengan foto kopi asli
+                  width: 80, height: 80, fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(width: 15),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(products[index]['name']!, 
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                    Text('Rich & Aromatic', style: TextStyle(color: Colors.grey, fontSize: 12)),
+                    SizedBox(height: 10),
+                    Text(products[index]['price']!, 
+                        style: TextStyle(color: Colors.blue[800], fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                  Text(products[index]['rating']!, style: TextStyle(fontSize: 12)),
+                  SizedBox(height: 5),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('+ Add to Cart', style: TextStyle(fontSize: 10)),
+                    style: ElevatedButton.styleFrom(
+                      shape: StadiumBorder(),
+                      backgroundColor: Colors.brown[700],
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // Navigation Bar bawah
+  Widget _buildBottomNav() {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Color(0xFF5D4037),
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white60,
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Menu'),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+      ],
+    );
+  }
+}
