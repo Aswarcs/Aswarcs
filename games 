@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #0f1021; } /* Warna dasar deep navy */
+    .glass-card { 
+      background: rgba(30, 41, 59, 0.5); 
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body class="text-white p-6 font-sans">
+
+  <div class="max-w-[1400px] mx-auto grid grid-cols-12 gap-6">
+    
+    <aside class="col-span-3 space-y-6">
+      <div class="glass-card p-6 rounded-3xl">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-500 to-purple-500 overflow-hidden">
+             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=aswar" alt="avatar">
+          </div>
+          <div>
+            <h2 class="font-bold text-lg">aswarcs</h2>
+            <p class="text-xs text-green-400">● Online</p>
+          </div>
+        </div>
+        
+        <nav class="space-y-4 text-gray-400">
+          <p class="text-xs uppercase tracking-widest font-semibold text-gray-500">Menu</p>
+          <a href="#" class="flex items-center space-x-3 text-white bg-blue-600/20 p-2 rounded-lg border-l-4 border-blue-500">
+            <span>🏠</span> <span>Home</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 hover:text-white transition">
+            <span>🎮</span> <span>Game Store</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl">
+        <h3 class="text-sm font-semibold mb-4">Favorite Channels</h3>
+        <ul class="space-y-4 text-sm text-gray-400">
+          <li class="flex justify-between items-center"><span>Buster</span> <span class="text-blue-400">●</span></li>
+          <li class="flex justify-between items-center"><span>DreadxTV</span> <span class="text-yellow-400">●</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="col-span-6 space-y-6">
+      <div class="relative h-64 rounded-3xl overflow-hidden bg-gradient-to-r from-blue-900 to-purple-900 flex items-center p-10">
+        <div class="z-10 max-w-xs">
+          <p class="text-xs text-blue-300 font-bold uppercase">Event Terkini</p>
+          <h1 class="text-3xl font-black mt-2 leading-tight">KOMPETISI KREATIF ASWARCS</h1>
+          <button class="mt-4 bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full text-sm font-bold transition">Lihat Semua</button>
+        </div>
+        <img src="https://via.placeholder.com/300x200" class="absolute right-0 opacity-50" alt="deco">
+      </div>
+
+      <section>
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold">Watch Now</h3>
+          <span class="text-blue-400 text-sm cursor-pointer">View All</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="glass-card overflow-hidden rounded-2xl group cursor-pointer">
+            <div class="h-40 bg-gray-700 relative">
+              <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                 <span class="bg-blue-500 p-3 rounded-full">▶</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold">Nexus War Tournament</h4>
+              <p class="text-xs text-gray-500 mt-1">Prize: $10,000</p>
+            </div>
+          </div>
+          <div class="glass-card overflow-hidden rounded-2xl group cursor-pointer">
+            <div class="h-40 bg-gray-700 relative">
+              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold">Fortnite Galaxy Cup</h4>
+              <p class="text-xs text-gray-500 mt-1">Status: Live Now</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="col-span-3 space-y-6">
+      <div class="glass-card p-6 rounded-3xl border-r-4 border-blue-500">
+        <h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-4">Your Stats</h3>
+        <div class="space-y-4">
+          <div>
+            <p class="text-2xl font-black">755.5</p>
+            <p class="text-xs text-gray-500 italic">Streaming Hours</p>
+          </div>
+          <hr class="border-gray-700">
+          <div>
+            <p class="text-2xl font-black text-blue-400">$5,432.0</p>
+            <p class="text-xs text-gray-500 italic">Total Income</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 rounded-3xl">
+        <h3 class="text-sm font-semibold mb-4">Updating Friends</h3>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full bg-gray-600"></div>
+            <div class="text-xs">
+              <p class="font-bold">Sheris_XD</p>
+              <p class="text-blue-400">21.29 $</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</body>
+</html>
