@@ -1,3 +1,27 @@
+{
+  "user": {
+    "name": "aswarcs",
+    "rank": "Immortal",
+    "stats": {
+      "income": 5432.0,
+      "hours": 755.5
+    }
+  },
+  "games_list": [
+    {
+      "id": 1,
+      "title": "Fortnite Galaxy Cup",
+      "image": "fortnite.jpg",
+      "is_live": true
+    },
+    {
+      "id": 2,
+      "title": "CSGO Major",
+      "image": "csgo.jpg",
+      "is_live": false
+    }
+  ]
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
